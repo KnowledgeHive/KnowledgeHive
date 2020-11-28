@@ -1,0 +1,1067 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Part 2: The Boot Loader · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="partC.html" />
+    
+    
+    <link rel="prev" href="partA.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Lab 1: Booting a PC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="partA.html">
+            
+                <a href="partA.html">
+            
+                    
+                    Part 1: PC Bootstrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="partB.html">
+            
+                <a href="partB.html">
+            
+                    
+                    Part 2: The Boot Loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="partC.html">
+            
+                <a href="partC.html">
+            
+                    
+                    Part 3: The Kernel
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../chapter2/">
+            
+                <a href="../chapter2/">
+            
+                    
+                    Lab 2: Memory Management
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../chapter2/partA.html">
+            
+                <a href="../chapter2/partA.html">
+            
+                    
+                    Part 1: Physical Page Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../chapter2/partB.html">
+            
+                <a href="../chapter2/partB.html">
+            
+                    
+                    Part 2: Virtual Memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../chapter2/partC.html">
+            
+                <a href="../chapter2/partC.html">
+            
+                    
+                    Part 3: Kernel Address Space
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../chapter3/">
+            
+                <a href="../chapter3/">
+            
+                    
+                    Lab 3: User Environments
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../chapter3/partA.html">
+            
+                <a href="../chapter3/partA.html">
+            
+                    
+                    Part 1: User Environments and Exception Handling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../chapter3/partB.html">
+            
+                <a href="../chapter3/partB.html">
+            
+                    
+                    Part 2: Page Faults, Breakpoints Exceptions, and System Calls
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../chapter4/">
+            
+                <a href="../chapter4/">
+            
+                    
+                    Lab 4: Preemptive Multitasking
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../chapter4/partA.html">
+            
+                <a href="../chapter4/partA.html">
+            
+                    
+                    Part A: Multiprocessor Support and Cooperative Multitasking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../chapter4/partB.html">
+            
+                <a href="../chapter4/partB.html">
+            
+                    
+                    Part B: Copy-on-Write Fork
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../chapter4/partC.html">
+            
+                <a href="../chapter4/partC.html">
+            
+                    
+                    Part C: Preemptive Multitasking and Inter-Process communication (IPC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../chapter5/">
+            
+                <a href="../chapter5/">
+            
+                    
+                    Lab 5: File system, Spawn and Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../chapter5/part1.html">
+            
+                <a href="../chapter5/part1.html">
+            
+                    
+                    File system preliminaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../chapter5/part2.html">
+            
+                <a href="../chapter5/part2.html">
+            
+                    
+                    The File System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../chapter5/part3.html">
+            
+                <a href="../chapter5/part3.html">
+            
+                    
+                    Spawning Process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../chapter5/part4.html">
+            
+                <a href="../chapter5/part4.html">
+            
+                    
+                    The keyboard interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../chapter5/part5.html">
+            
+                <a href="../chapter5/part5.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../chapter6/">
+            
+                <a href="../chapter6/">
+            
+                    
+                    Lab 6: Network Driver
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../chapter6/pre.html">
+            
+                <a href="../chapter6/pre.html">
+            
+                    
+                    Network system preliminaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../chapter6/partA.html">
+            
+                <a href="../chapter6/partA.html">
+            
+                    
+                    Part A: Initialization and transmitting packets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../chapter6/partB.html">
+            
+                <a href="../chapter6/partB.html">
+            
+                    
+                    Part B: Receiving packets and the web server
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../chapter7/">
+            
+                <a href="../chapter7/">
+            
+                    
+                    Homework-xv6
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../chapter7/part1.html">
+            
+                <a href="../chapter7/part1.html">
+            
+                    
+                    Boot xv6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../chapter7/part2.html">
+            
+                <a href="../chapter7/part2.html">
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../chapter7/part3.html">
+            
+                <a href="../chapter7/part3.html">
+            
+                    
+                    system call
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../chapter7/part4.html">
+            
+                <a href="../chapter7/part4.html">
+            
+                    
+                    lazy page allocation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../chapter7/part5.html">
+            
+                <a href="../chapter7/part5.html">
+            
+                    
+                    xv6 CPU alarm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../chapter7/part6.html">
+            
+                <a href="../chapter7/part6.html">
+            
+                    
+                    multithreaded programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="../chapter7/part7.html">
+            
+                <a href="../chapter7/part7.html">
+            
+                    
+                    xv6 locks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="../chapter7/part8.html">
+            
+                <a href="../chapter7/part8.html">
+            
+                    
+                    uthreads
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="../chapter7/part9.html">
+            
+                <a href="../chapter7/part9.html">
+            
+                    
+                    barrier
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="../chapter7/part10.html">
+            
+                <a href="../chapter7/part10.html">
+            
+                    
+                    big files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.11" data-path="../chapter7/part11.html">
+            
+                <a href="../chapter7/part11.html">
+            
+                    
+                    carsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.12" data-path="../chapter7/part12.html">
+            
+                <a href="../chapter7/part12.html">
+            
+                    
+                    mmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Part 2: The Boot Loader</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="part-2-the-boot-loader">Part 2: The Boot Loader</h1>
+<h2 id="preliminaries">preliminaries</h2>
+<p>&#x78C1;&#x76D8;&#x88AB;&#x5206;&#x5272;&#x4E3A;sector&#x7684;&#x6700;&#x5C0F;&#x57FA;&#x672C;&#x5355;&#x4F4D;&#xFF0C;1 sector=512B&#x3002;</p>
+<p>&#x540E;&#x6765;&#x968F;&#x7740;&#x786C;&#x4EF6;&#x7684;&#x53D1;&#x5C55;&#xFF0C;PC&#x4E3B;&#x8981;&#x4E5F;&#x9700;&#x8981;&#x80FD;&#x591F;&#x4ECE;CD&#x4E2D;&#x542F;&#x52A8;&#xFF0C;&#x800C;CD&#x4E2D;&#x5206;&#x5272;&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D;&#x4E3A;1 sector = 2048B&#x3002;&#x65B9;&#x5F0F;&#x7565;&#x6709;&#x4E0D;&#x540C;&#xFF0C;&#x5177;&#x4F53;&#x4E0D;&#x540C;&#x9700;&#x8981;&#x53C2;&#x8003;&#x5176;&#x4ED6;&#x7684;&#x8D44;&#x6599;&#x3002;</p>
+<p>boot loader&#x4E3B;&#x8981;&#x505A;&#x7684;&#x4E24;&#x4EF6;&#x4E8B;&#x60C5;&#xFF1A;</p>
+<ol>
+<li>&#x4ECE;16-bit&#x7684;&#x5B9E;&#x6A21;&#x5F0F;&#x8F6C;&#x5316;&#x5230;32-bit&#x7684;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F;&#x3002;&#x8F6C;&#x6362;&#x5230;32&#x4F4D;&#x7684;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F;&#x6709;&#x8BF8;&#x591A;&#x7684;&#x597D;&#x5904;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x4E4B;&#x540E;&#x8F6C;&#x6362;&#x989D;&#x8FC7;&#x7A0B;&#x4E2D;&#x8FDB;&#x884C;&#x5177;&#x4F53;&#x7684;&#x8BA8;&#x8BBA;&#x3002;</li>
+<li>&#x7B2C;&#x4E8C;&#x70B9;&#x662F;&#x5C06;kernel&#x4EE3;&#x7801;&#x4ECE;&#x786C;&#x76D8;&#x4E2D;&#x8BFB;&#x53D6;&#x51FA;&#x6765;&#x3002;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x6D89;&#x53CA;&#x5230;&#x7279;&#x6B8A;&#x7684;I/O&#x6307;&#x4EE4;&#x3002;&#x5BF9;&#x7406;&#x89E3;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x6574;&#x4F53;&#x7684;&#x6846;&#x67B6;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x70B9;&#x3002;</li>
+</ol>
+<h3 id="exercise-3">exercise 3</h3>
+<blockquote>
+<p>&#x719F;&#x6089;GDB&#x7684;&#x8C03;&#x8BD5;&#x6307;&#x4EE4;&#x3002;</p>
+<p>&#x4F7F;&#x7528;GDB&#x5355;&#x6B65;&#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#xFF0C;&#x8C03;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<code>obj/boot/boot.asm</code>&#x8FD9;&#x4E2A;&#x53CD;&#x6C47;&#x7F16;&#x4E2D;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x56E0;&#x4E3A;CPU&#x5C31;&#x662F;&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x7684;&#x6307;&#x4EE4;&#x8FDB;&#x884C;&#x7684;&#x3002;</p>
+<p>readsect()&#x91CC;&#x9762;&#x8C03;&#x7528;&#x7684;&#x6307;&#x4EE4;&#x548C;&#x8BFB;&#x53D6;&#x5B8C;&#x4E86;&#x6267;&#x884C;&#x4E86;&#x4EC0;&#x4E48;&#x6307;&#x4EE4;&#x3002;</p>
+</blockquote>
+<p>&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x4E3B;&#x8981;&#x662F;&#x719F;&#x6089;&#x4F7F;&#x7528;GDB&#x7ED3;&#x5408;<code>.asm</code>&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x8C03;&#x8BD5;&#x73AF;&#x5883;&#x662F;cgdb&#xFF0C;&#x56E0;&#x6B64;&#x80FD;&#x591F;&#x5B9E;&#x65F6;&#x7684;&#x770B;&#x5230;&#x53CD;&#x6C47;&#x7F16;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x5F53;&#x7136;&#x8C03;&#x8BD5;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x5BF9;&#x6574;&#x4F53;&#x6709;&#x4E00;&#x4E2A;&#x7406;&#x89E3;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x9700;&#x8981;&#x501F;&#x9274;<code>.asm</code>&#x3002;</p>
+<p>Q1&#xFF1A; &#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x5904;&#x7406;&#x5668;&#x5F00;&#x59CB;&#x6267;&#x884C;32&#x4F4D;&#x7684;&#x4EE3;&#x7801;&#xFF1F;&#x4EC0;&#x4E48;&#x5F15;&#x8D77;&#x4E86;&#x4ECE;16-&#x8F6C;&#x6362;&#x5230;&#x4E86;32-bit&#xFF1F;</p>
+<pre><code class="lang-assembly">ljmp    $PROT_MODE_CSEG, $protcseg
+</code></pre>
+<p><img src="https://pic4.zhimg.com/80/v2-fab5e355c49871afb1a3a7a6053b8b68.png" alt=""></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5728;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x6307;&#x4EE4;&#x4E4B;&#x524D;&#xFF0C;&#x5730;&#x5740;&#x7684;&#x5BFB;&#x5740;&#x65B9;&#x5F0F;&#x4E3A;<code>[0:7c2d]</code>&#xFF0C;&#x4E00;&#x65E6;&#x6267;&#x884C;&#x5B8C;&#x8FD9;&#x6761;&#x8BED;&#x53E5;&#xFF0C;&#x5BFB;&#x5740;&#x65B9;&#x5F0F;&#x53D8;&#x4E3A;0x7c32&#x3002;</p>
+<p>Q2: bootloader&#x6267;&#x884C;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#xFF1F;kernel&#x6267;&#x884C;&#x7684;&#x7B2C;&#x4E00;&#x6761;&#x8BED;&#x53E5;&#x4E3A;&#xFF1F;</p>
+<pre><code class="lang-c">movw    $<span class="hljs-number">0x1234</span>,<span class="hljs-number">0x472</span>            <span class="hljs-meta"># warm boot</span>
+</code></pre>
+<p>Q3: kernel&#x6267;&#x884C;&#x7684;&#x7B2C;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#xFF1F;</p>
+<p>&#x540C;Q2&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x7B54;&#x6848;&#x3002;</p>
+<pre><code>movw    $0x1234,0x472            # warm boot
+</code></pre><p>Q4: boot loader&#x662F;&#x600E;&#x4E48;&#x77E5;&#x9053;&#x8BFB;&#x53D6;&#x591A;&#x5C11;&#x4E2A;sectors&#x5230;&#x5185;&#x5B58;&#x7684;&#xFF1F;</p>
+<p>&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x4FDD;&#x5B58;&#x5230;ELF header&#x4E2D;&#xFF0C;&#x5728;&#x7F16;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x5DF2;&#x7ECF;&#x51B3;&#x5B9A;&#x4E86;&#x3002;</p>
+<p>&#x5173;&#x4E8E;&#x7A0B;&#x5E8F;&#x662F;&#x600E;&#x4E48;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x5E76;&#x4E14;&#x8FDB;&#x884C;&#x8FD0;&#x884C;&#x7684;&#xFF0C;&#x4E3B;&#x8981;&#x770B;&#x4E24;&#x5F20;&#x56FE;&#x8FDB;&#x884C;&#x7406;&#x89E3;&#xFF1A;</p>
+<p><img src="https://pic4.zhimg.com/80/v2-f69aca48b1db982fb17c966953a8c72f.png" alt=""></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x53EF;&#x4EE5;&#x4ECE;ELF header&#x8BFB;&#x53D6;&#x5230;Program header table&#x548C;Section header table&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4E4B;&#x540E;&#x80FD;&#x591F;&#x4ECE;&#x8FD9;&#x4E24;&#x4E2A;&#x8868;&#x4E2D;&#x8BFB;&#x53D6;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x56FE;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x77E5;&#x9053;ELF&#x8FD0;&#x4F5C;&#x66F4;&#x591A;&#x7684;&#x7EC6;&#x8282;&#xFF1A;</p>
+<p><img src="https://pic4.zhimg.com/80/v2-771e20e86d65a9b4266bf3fc620af91b.png" alt=""></p>
+<p>&#x8FD9;&#x5F20;&#x56FE;&#x4E0A;&#x4F20;&#x540E;&#x538B;&#x7F29;&#x80AF;&#x5B9A;&#x770B;&#x4E0D;&#x6E05;&#x4E86;&#xFF0C;&#x5EFA;&#x8BAE;&#x76F4;&#x63A5;&#x4E0B;&#x8F7D;&#x770B;&#x539F;&#x56FE;:<a href="https://github.com/baolintian/6.828/blob/master/elf.pdf" target="_blank">&#x539F;&#x56FE;&#x94FE;&#x63A5;</a></p>
+<p>&#x5728;ELF header&#x4E2D;&#x8BB0;&#x5F55;&#x7740;program header table&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x6BCF;&#x4E2A;entry&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x504F;&#x79FB;&#x91CF;&#x3002;&#x800C;program header table&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x4FE1;&#x606F;&#x90FD;&#x80FD;&#x591F;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5C06;&#x5177;&#x4F53;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x6570;&#x636E;&#x8BFB;&#x5165;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x3002;</p>
+<p>section header table&#x5728;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x8FDB;&#x5185;&#x5B58;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x7528;&#x3002;</p>
+<p>&#x771F;&#x6B63;&#x8D77;&#x5230;&#x5C06;&#x6570;&#x636E;&#x8BFB;&#x5230;&#x5185;&#x5B58;&#x7684;&#x6D41;&#x7A0B;&#x5C31;&#x662F;ELF header -&gt; &#x67E5;&#x627E; program header table -&gt; &#x5177;&#x4F53;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<h2 id="loading-the-kernel">Loading the Kernel</h2>
+<h3 id="exercise-4">exercise 4</h3>
+<blockquote>
+<p>&#x9996;&#x5148;&#x719F;&#x6089;C&#x8BED;&#x8A00;&#x7684;&#x6307;&#x9488;&#x3002;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x7B80;&#x77ED;&#x7684;<a href="https://pdos.csail.mit.edu/6.828/2018/readings/pointers.pdf" target="_blank">&#x6559;&#x6750;</a>&#x3002;</p>
+<p>&#x89E3;&#x91CA;&#x4E0B;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x8F93;&#x51FA;&#x5185;&#x5BB9;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span>
+<span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span>{
+    <span class="hljs-keyword">int</span> a[<span class="hljs-number">4</span>];
+    <span class="hljs-keyword">int</span> *b = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">16</span>);
+    <span class="hljs-keyword">int</span> *c;
+    <span class="hljs-keyword">int</span> i;
+
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;1: a = %p, b = %p, c = %p\n&quot;</span>, a, b, c);
+
+    c = a;
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++)
+        a[i] = <span class="hljs-number">100</span> + i;
+    c[<span class="hljs-number">0</span>] = <span class="hljs-number">200</span>;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;2: a[0] = %d, a[1] = %d, a[2] = %d, a[3] = %d\n&quot;</span>,
+       a[<span class="hljs-number">0</span>], a[<span class="hljs-number">1</span>], a[<span class="hljs-number">2</span>], a[<span class="hljs-number">3</span>]);
+
+    c[<span class="hljs-number">1</span>] = <span class="hljs-number">300</span>;
+    *(c + <span class="hljs-number">2</span>) = <span class="hljs-number">301</span>;
+    <span class="hljs-number">3</span>[c] = <span class="hljs-number">302</span>;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;3: a[0] = %d, a[1] = %d, a[2] = %d, a[3] = %d\n&quot;</span>,
+       a[<span class="hljs-number">0</span>], a[<span class="hljs-number">1</span>], a[<span class="hljs-number">2</span>], a[<span class="hljs-number">3</span>]);
+
+    c = c + <span class="hljs-number">1</span>;<span class="hljs-comment">//&#x5B9E;&#x9645;&#x4E0A;&#x504F;&#x79FB;&#x4E86;4B</span>
+    *c = <span class="hljs-number">400</span>;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;4: a[0] = %d, a[1] = %d, a[2] = %d, a[3] = %d\n&quot;</span>,
+       a[<span class="hljs-number">0</span>], a[<span class="hljs-number">1</span>], a[<span class="hljs-number">2</span>], a[<span class="hljs-number">3</span>]);
+
+    c = (<span class="hljs-keyword">int</span> *) ((<span class="hljs-keyword">char</span> *) c + <span class="hljs-number">1</span>);
+    *c = <span class="hljs-number">500</span>;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;5: a[0] = %d, a[1] = %d, a[2] = %d, a[3] = %d\n&quot;</span>,
+       a[<span class="hljs-number">0</span>], a[<span class="hljs-number">1</span>], a[<span class="hljs-number">2</span>], a[<span class="hljs-number">3</span>]);
+
+    b = (<span class="hljs-keyword">int</span> *) a + <span class="hljs-number">1</span>;
+    c = (<span class="hljs-keyword">int</span> *) ((<span class="hljs-keyword">char</span> *) a + <span class="hljs-number">1</span>);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;6: a = %p, b = %p, c = %p\n&quot;</span>, a, b, c);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span>
+<span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> ac, <span class="hljs-keyword">char</span> **av)</span>
+</span>{
+    f();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p><code>pinter.c</code>&#x7684;&#x8F93;&#x51FA;&#x5185;&#x5BB9;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-number">1</span>: a = <span class="hljs-number">0x7ffec83ade20</span>, b = <span class="hljs-number">0x13e3010</span>, c = <span class="hljs-number">0xf0b6ff</span>
+<span class="hljs-number">2</span>: a[<span class="hljs-number">0</span>] = <span class="hljs-number">200</span>, a[<span class="hljs-number">1</span>] = <span class="hljs-number">101</span>, a[<span class="hljs-number">2</span>] = <span class="hljs-number">102</span>, a[<span class="hljs-number">3</span>] = <span class="hljs-number">103</span>
+<span class="hljs-number">3</span>: a[<span class="hljs-number">0</span>] = <span class="hljs-number">200</span>, a[<span class="hljs-number">1</span>] = <span class="hljs-number">300</span>, a[<span class="hljs-number">2</span>] = <span class="hljs-number">301</span>, a[<span class="hljs-number">3</span>] = <span class="hljs-number">302</span>
+<span class="hljs-number">4</span>: a[<span class="hljs-number">0</span>] = <span class="hljs-number">200</span>, a[<span class="hljs-number">1</span>] = <span class="hljs-number">400</span>, a[<span class="hljs-number">2</span>] = <span class="hljs-number">301</span>, a[<span class="hljs-number">3</span>] = <span class="hljs-number">302</span>
+<span class="hljs-number">5</span>: a[<span class="hljs-number">0</span>] = <span class="hljs-number">200</span>, a[<span class="hljs-number">1</span>] = <span class="hljs-number">128144</span>, a[<span class="hljs-number">2</span>] = <span class="hljs-number">256</span>, a[<span class="hljs-number">3</span>] = <span class="hljs-number">302</span>
+<span class="hljs-number">6</span>: a = <span class="hljs-number">0x7ffec83ade20</span>, b = <span class="hljs-number">0x7ffec83ade24</span>, c = <span class="hljs-number">0x7ffec83ade21</span>
+</code></pre>
+<p>&#x5176;&#x4ED6;&#x7684;&#x8F93;&#x51FA;&#x539F;&#x56E0;&#x6BD4;&#x8F83;&#x7684;&#x7B80;&#x5355;&#xFF0C;&#x6211;&#x4EEC;&#x4EC5;&#x4EC5;&#x5206;&#x6790;&#x7B2C;5&#x6761;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-c">&#x4FEE;&#x6539;&#x524D;a&#x5185;&#x5B58;&#x7684;&#x5206;&#x5E03;
+<span class="hljs-number">0000</span> <span class="hljs-number">0000</span> &#x9AD8;&#x5730;&#x5740;
+<span class="hljs-number">0000</span> <span class="hljs-number">0000</span>
+<span class="hljs-number">0000</span> <span class="hljs-number">0001</span>
+<span class="hljs-number">0010</span> <span class="hljs-number">1101</span>
+<span class="hljs-number">0000</span> <span class="hljs-number">0000</span>
+<span class="hljs-number">0000</span> <span class="hljs-number">0000</span>
+<span class="hljs-number">0000</span> <span class="hljs-number">0001</span>
+<span class="hljs-number">1001</span> <span class="hljs-number">0000</span> &#x4F4E;&#x5730;&#x5740; a+<span class="hljs-number">1</span>
+
+
+&#x4FEE;&#x6539;&#x540E;a&#x5185;&#x5B58;&#x7684;&#x5206;&#x5E03;
+<span class="hljs-number">0000</span> <span class="hljs-number">0000</span> &#x9AD8;&#x5730;&#x5740;
+<span class="hljs-number">0000</span> <span class="hljs-number">0000</span>
+<span class="hljs-number">0000</span> <span class="hljs-number">0001</span>
+---------
+<span class="hljs-number">0000</span> <span class="hljs-number">0000</span>
+<span class="hljs-number">0000</span> <span class="hljs-number">0000</span>
+<span class="hljs-number">0000</span> <span class="hljs-number">0001</span>
+<span class="hljs-number">1111</span> <span class="hljs-number">0100</span>
+---------
+<span class="hljs-number">1001</span> <span class="hljs-number">0000</span> &#x4F4E;&#x5730;&#x5740; a+<span class="hljs-number">1</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E5F;&#x8BC1;&#x660E;&#x8BE5;PC&#x7684;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x5C0F;&#x7AEF;&#x6CD5;&#xFF0C;&#x5373;&#x6570;&#x5B57;&#x7684;&#x4F4E;&#x4F4D;&#x4FDD;&#x5B58;&#x5728;&#x4F4E;&#x5730;&#x5740;&#x3002;</p>
+<p>&#x8BE5;&#x5B9E;&#x9A8C;&#x4E3B;&#x8981;&#x60F3;&#x8981;&#x8BC1;&#x660E;&#x7684;&#x662F;&#xFF0C;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x504F;&#x79FB;&#x91CF;&#x662F;&#x4E0D;&#x540C;&#x7684;&#xFF0C;&#x548C;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x6709;&#x5173;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x719F;&#x6089;ELF(Executable and Linkable Format)&#x3002;</p>
+<p>&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x6709;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;ELF header&#xFF0C;&#x7D27;&#x968F;&#x5176;&#x540E;&#x7684;&#x662F;&#x53EF;&#x53D8;&#x957F;&#x7684;program header&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x7740;&#x9700;&#x8981;&#x88AB;&#x8BFB;&#x53D6;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x7684;program section&#x3002;</p>
+<p>&#x5176;&#x4E2D;&#x9700;&#x8981;&#x7279;&#x522B;&#x7559;&#x610F;&#x51E0;&#x4E2A;&#x5E38;&#x7528;&#x7684;section&#xFF1A;</p>
+<ul>
+<li>.text: &#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x4E2D;&#x53EF;&#x6267;&#x884C;&#x7684;&#x6307;&#x4EE4;&#x3002;</li>
+<li>.rodata: &#x53EA;&#x8BFB;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E00;&#x822C;&#x662F;C&#x8BED;&#x8A00;&#x7684;&#x5E38;&#x91CF;&#xFF0C;&#x6BD4;&#x5982;printf&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x503C;&#x3002;</li>
+<li><p>.data: &#x7A0B;&#x5E8F;&#x4E2D;&#x521D;&#x59CB;&#x5316;&#x4E86;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;</p>
+</li>
+<li><p>.bss: &#x7A0B;&#x5E8F;&#x4E2D;&#x672A;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x7D27;&#x8DDF;&#x5728;.data&#x540E;&#x9762;&#x3002;&#x7531;&#x4E8E;&#x8FD9;&#x4E9B;&#x503C;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#x90FD;&#x662F;0&#xFF0C;&#x56E0;&#x6B64;&#x5728;ELF&#x8BB0;&#x5F55;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4EC5;&#x9700;&#x8981;&#x8BB0;&#x5F55;&#x8FD9;&#x4E00;&#x6BB5;&#x7684;&#x8D77;&#x59CB;&#x5730;&#x5740;&#x548C;&#x5927;&#x5C0F;&#x3002;&#x7B49;&#x52A0;&#x8F7D;(program loader)&#x65F6;&#xFF0C;&#x518D;&#x5C06;&#x5BF9;&#x5E94;&#x7684;&#x7A7A;&#x95F4;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
+</li>
+</ul>
+<p>&#x8F93;&#x5165;&#xFF1A;</p>
+<pre><code>tbl@ubuntu:~/6.828/lab$ objdump -h obj/kern/kernel
+</code></pre><p>&#x8F93;&#x51FA;</p>
+<pre><code class="lang-c">tbl@ubuntu:~/<span class="hljs-number">6.828</span>/lab$ objdump -h obj/kern/kernel
+
+obj/kern/kernel:     file format elf32-i386
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  <span class="hljs-number">0</span> .text         <span class="hljs-number">00001941</span>  f0100000  <span class="hljs-number">00100000</span>  <span class="hljs-number">00001000</span>  <span class="hljs-number">2</span>**<span class="hljs-number">4</span>
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  <span class="hljs-number">1</span> .rodata       <span class="hljs-number">0000079</span>c  f0101960  <span class="hljs-number">00101960</span>  <span class="hljs-number">00002960</span>  <span class="hljs-number">2</span>**<span class="hljs-number">5</span>
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  <span class="hljs-number">2</span> .stab         <span class="hljs-number">00003</span>b89  f01020fc  <span class="hljs-number">001020f</span>c  <span class="hljs-number">000030f</span>c  <span class="hljs-number">2</span>**<span class="hljs-number">2</span>
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  <span class="hljs-number">3</span> .stabstr      <span class="hljs-number">0000197f</span>  f0105c85  <span class="hljs-number">00105</span>c85  <span class="hljs-number">00006</span>c85  <span class="hljs-number">2</span>**<span class="hljs-number">0</span>
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  <span class="hljs-number">4</span> .data         <span class="hljs-number">0000</span>a300  f0108000  <span class="hljs-number">00108000</span>  <span class="hljs-number">00009000</span>  <span class="hljs-number">2</span>**<span class="hljs-number">12</span>
+                  CONTENTS, ALLOC, LOAD, DATA
+  <span class="hljs-number">5</span> .bss          <span class="hljs-number">00000648</span>  f0112300  <span class="hljs-number">00112300</span>  <span class="hljs-number">00013300</span>  <span class="hljs-number">2</span>**<span class="hljs-number">5</span>
+                  CONTENTS, ALLOC, LOAD, DATA
+  <span class="hljs-number">6</span> .comment      <span class="hljs-number">00000035</span>  <span class="hljs-number">00000000</span>  <span class="hljs-number">00000000</span>  <span class="hljs-number">00013948</span>  <span class="hljs-number">2</span>**<span class="hljs-number">0</span>
+                  CONTENTS, READONLY
+</code></pre>
+<p>&#x9700;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;<code>VMA=link address=vaddr(&#x865A;&#x62DF;&#x5730;&#x5740;)</code>&#xFF0C; <code>LMA=load address=paddr(&#x7269;&#x7406;&#x5730;&#x5740;)</code>&#x3002;</p>
+<blockquote>
+<p>The load address of a section is the memory address at which that section should be loaded into memory.</p>
+<p>The link address   of a section is the memory address from which the section expects to execute.</p>
+</blockquote>
+<p>&#x4E00;&#x822C;link&#x548C;load&#x5730;&#x5740;&#x90FD;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#xFF1A;</p>
+<pre><code>tbl@ubuntu:~/6.828/lab$ objdump -h obj/boot/boot.out
+
+obj/boot/boot.out:     file format elf32-i386
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000186  00007c00  00007c00  00000074  2**2
+                  CONTENTS, ALLOC, LOAD, CODE
+  1 .eh_frame     000000a8  00007d88  00007d88  000001fc  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .stab         00000720  00000000  00000000  000002a4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      0000088f  00000000  00000000  000009c4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .comment      00000035  00000000  00000000  00001253  2**0
+                  CONTENTS, READONLY
+</code></pre><p>&#x6211;&#x4EEC;&#x5BF9;&#x4E0B;&#x9762;&#x7684;</p>
+<pre><code class="lang-assembly">tbl@ubuntu:~/6.828/lab$ objdump -x obj/kern/kernel
+
+obj/kern/kernel:     file format elf32-i386
+obj/kern/kernel
+architecture: i386, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x0010000c
+
+Program Header:
+    LOAD off    0x00001000 vaddr 0xf0100000 paddr 0x00100000 align 2**12
+         filesz 0x00007604 memsz 0x00007604 flags r-x
+    LOAD off    0x00009000 vaddr 0xf0108000 paddr 0x00108000 align 2**12
+         filesz 0x0000a948 memsz 0x0000a948 flags rw-
+   STACK off    0x00000000 vaddr 0x00000000 paddr 0x00000000 align 2**4
+         filesz 0x00000000 memsz 0x00000000 flags rwx
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00001941  f0100000  00100000  00001000  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .rodata       0000079c  f0101960  00101960  00002960  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .stab         00003b89  f01020fc  001020fc  000030fc  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .stabstr      0000197f  f0105c85  00105c85  00006c85  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .data         0000a300  f0108000  00108000  00009000  2**12
+                  CONTENTS, ALLOC, LOAD, DATA
+  5 .bss          00000648  f0112300  00112300  00013300  2**5
+                  CONTENTS, ALLOC, LOAD, DATA
+  6 .comment      00000035  00000000  00000000  00013948  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+f0100000 l    d  .text  00000000 .text
+f0101960 l    d  .rodata        00000000 .rodata
+</code></pre>
+<p>Program Header&#x4E2D;<code>LOAD</code>&#x8868;&#x793A;&#x4F1A;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;filesz&#x548C;vaddr&#x63A8;&#x65AD;&#xFF1A;<code>.text</code>,<code>.rodata</code>...<code>stabstr</code>&#x8FD9;&#x4E9B;&#x90E8;&#x5206;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;<code>LOAD</code>&#x90E8;&#x5206;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x6240;&#x6709;sections&#x90FD;&#x5728;&#x7B2C;&#x4E8C;&#x4E2A;<code>LOAD</code>&#x4E2D;&#x3002;</p>
+<h3 id="exercise-5">exercise 5</h3>
+<blockquote>
+<p>&#x4FEE;&#x6539;boot loader&#x7684;&#x5730;&#x5740;&#xFF0C;&#x7136;&#x540E;&#x770B;&#x770B;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#x9519;&#x8BEF;&#x3002;</p>
+</blockquote>
+<p>BIOS&#x4ECE;0x7c00&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x5F00;&#x59CB;&#x6267;&#x884C;boot loader&#x4E2D;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x662F;&#x8FD9;&#x4E2A;sector&#x7684;load address&#x3002;&#x5E76;&#x4E14;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x53EF;&#x4EE5;&#x5728;<code>boot/Makefrag</code>&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x3002;</p>
+<p>&#x5C06;&#x539F;&#x6765;&#x7684;&#x503C;&#x4FEE;&#x6539;&#x4E3A;<code>0x8c00</code>&#xFF0C;&#x6211;&#x4EEC;&#x91CD;&#x65B0;&#x5728;<code>0x7c00</code>&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x6253;&#x4E0A;&#x65AD;&#x70B9;&#xFF0C;&#x53D1;&#x73B0;&#x8FD8;&#x662F;&#x5728;&#x80FD;&#x591F;&#x8FDB;&#x5165;boot loader&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x4F3C;&#x4E4E;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x53D8;&#x5316;&#x3002;&#x6211;&#x4EEC;<code>si</code>&#x5355;&#x6B65;&#x6267;&#x884C;&#x4E0B;&#x53BB;&#xFF0C;&#x53D1;&#x73B0;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x8BED;&#x53E5;&#x51FA;&#x73B0;&#x4E86;&#x9519;&#x8BEF;&#xFF1A;</p>
+<pre><code class="lang-c">ljmp $<span class="hljs-number">0x8</span>, $<span class="hljs-number">0x8c32</span>
+</code></pre>
+<p>&#x7B2C;&#x4E8C;&#x4E2A;&#x503C;&#x539F;&#x6765;&#x662F;<code>0x7c32</code>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x662F;&#x8FD9;&#x91CC;&#x4EA7;&#x751F;&#x4E86;&#x6539;&#x53D8;&#x3002;</p>
+<p><img src="https://pic4.zhimg.com/80/v2-5bd45d77ebb33b30b65cf736a026c2bf.png" alt=""></p>
+<p>&#x5E76;&#x4E14;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x4EEC;&#x4FEE;&#x6539;&#x4E86;&#x8FD9;&#x4E2A;&#x52A0;&#x8F7D;&#x7684;&#x5730;&#x5740;&#xFF0C;BIOS&#x542F;&#x52A8;&#x6267;&#x884C;&#x7684;&#x7B2C;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x7684;&#x5730;&#x5740;&#x4F9D;&#x65E7;&#x662F;<code>0x7c00</code>&#x5462;&#xFF1F;&#x8FD9;&#x4E2A;&#x5176;&#x5B9E;&#x6709;&#x4E00;&#x4E2A;&#x5178;&#x6545;&#xFF0C;&#x548C;&#x65E9;&#x671F;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x8BBE;&#x8BA1;&#x662F;&#x6709;&#x5173;&#x7CFB;&#x7684;&#x3010;3&#x3011;&#x3002;&#x5386;&#x53F2;&#x4E0A;&#x6709;&#x4E00;&#x79CD;&#x673A;&#x5668;&#x7684;&#x5185;&#x5B58;&#x4E3A;32KB&#xFF0C;0x7C00-0x7DFF&#x4E2D;&#x524D;512B&#x5B58;&#x653E;&#x786C;&#x76D8;&#x7684;&#x5F15;&#x5BFC;&#x7A0B;&#x5E8F;&#xFF0C;&#x540E;512B&#x5B58;&#x653E;&#x5176;&#x4E2D;&#x4EA7;&#x751F;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;boot loader&#x7684;load address&#x548C;link address&#x662F;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5728;kernel&#x90E8;&#x5206;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x81F4;&#x7684;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;kernel&#x5E0C;&#x671B;boot loader&#x80FD;&#x591F;&#x5728;&#x4F4E;&#x5730;&#x5740;&#x52A0;&#x8F7D;&#x81EA;&#x5DF1;&#xFF0C;&#x5728;&#x9AD8;&#x5730;&#x5740;(0xf0000...)&#x6267;&#x884C;&#x81EA;&#x5DF1;&#x3002;&#x8FD9;&#x4E2A;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x8BE6;&#x7EC6;&#x7684;&#x8BA8;&#x8BBA;&#x3002;</p>
+<p>&#x67E5;&#x770B;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x7684;&#x5F00;&#x59CB;&#x5730;&#x5740;&#xFF1A;</p>
+<pre><code>tbl@ubuntu:~/6.828/lab$ objdump -f obj/kern/kernel
+
+obj/kern/kernel:     file format elf32-i386
+architecture: i386, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x0010000c
+</code></pre><h3 id="exercise-6">exercise 6</h3>
+<blockquote>
+<p>&#x4F7F;&#x7528;x/Nx address&#x67E5;&#x770B;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5185;&#x5BB9;</p>
+<p>&#x5F53;&#x4ECE;BIOS&#x8FDB;&#x5165;&#x5230;boot loader&#x65F6;&#x5728;&#x5730;&#x5740;0x00100000&#x7684;&#x5185;&#x5B58;&#x5B58;&#x50A8;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x8FDB;&#x5165;&#x5230;kernel 0x00100000&#x5B58;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;1 word = 2 Bytes</p>
+</blockquote>
+<p>&#x4E24;&#x5904;&#x5185;&#x5B58;&#x7684;&#x503C;&#x5206;&#x522B;&#x4E3A;&#xFF1A;</p>
+<p><img src="https://pic4.zhimg.com/80/v2-124b9efae4ec788ccc8c395c1920ab79.png" alt=""></p>
+<p><img src="https://pic4.zhimg.com/80/v2-883b7344983b7c86de895c8e93fe9563.png" alt=""></p>
+<p>&#x6211;&#x4EEC;&#x518D;&#x67E5;&#x770B;<code>obj/kern/kernel.asm</code>&#x4E2D;&#x6307;&#x4EE4;&#xFF1A;</p>
+<pre><code>entry:
+    movw    $0x1234,0x472            # warm boot
+f0100000:    02 b0 ad 1b 00 00        add    0x1bad(%eax),%dh
+f0100006:    00 00                    add    %al,(%eax)
+f0100008:    fe 4f 52                 decb   0x52(%edi)
+f010000b:    e4                       .byte 0xe4
+
+f010000c &lt;entry&gt;:
+f010000c:    66 c7 05 72 04 00 00     movw   $0x1234,0x472
+f0100013:    34 12
+</code></pre><p>&#x4ECE;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x7247;&#x6BB5;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;0x34&#x5B58;&#x5728;&#x5730;&#x5740;0xf0100013, 0x12&#x5B58;&#x5230;&#x4E86;0xf0100014&#xFF0C;&#x4F46;&#x662F;&#x5728;GDB&#x5C55;&#x793A;&#x7684;&#x65F6;&#x5019;&#x662F;&#x9006;&#x8FC7;&#x6765;&#x7684;&#xFF0C;&#x8BF4;&#x660E;&#x5185;&#x90E8;&#x662F;&#x5012;&#x5E8F;&#x7684;&#x3002;</p>
+<pre><code class="lang-c">f010000c:    <span class="hljs-number">66</span> c7 <span class="hljs-number">05</span> <span class="hljs-number">72</span> <span class="hljs-number">04</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>     movw   $<span class="hljs-number">0x1234</span>,<span class="hljs-number">0x472</span>
+f0100013:    <span class="hljs-number">34</span> <span class="hljs-number">12</span>
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#xFF0C;GDB&#x4E00;&#x4E2A;32&#x4F4D;&#x7684;&#x503C;&#x7684;&#x5C55;&#x793A;&#xFF0C;&#x5730;&#x5740;&#x662F;&#x4ECE;&#x9AD8;-&gt;&#x4F4E;&#x7684;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x548C;&#x4E0A;&#x9762;&#x56FE;&#x7247;&#x6240;&#x5C55;&#x793A;&#x7684;&#x5185;&#x5BB9;&#x4E00;&#x81F4;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="partA.html" class="navigation navigation-prev " aria-label="Previous page: Part 1: PC Bootstrap">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="partC.html" class="navigation navigation-next " aria-label="Next page: Part 3: The Kernel">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Part 2: The Boot Loader","level":"1.2.2","depth":2,"next":{"title":"Part 3: The Kernel","level":"1.2.3","depth":2,"path":"chapter1/partC.md","ref":"chapter1/partC.md","articles":[]},"previous":{"title":"Part 1: PC Bootstrap","level":"1.2.1","depth":2,"path":"chapter1/partA.md","ref":"chapter1/partA.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["callouts@git+https://github.com/Simran-B/gitbook-plugin-callouts.git","intopic-toc","theme-comscore","-lunr","-search","search-pro","github","splitter","-sharing","livereload"],"pluginsConfig":{"callouts":{"showTypeInHeader":true},"github":{"url":"https://github.com/KnowledgeHive/KnowledgeHive"},"intopic-toc":{"isCollapsed":false,"isScrollspyActive":true,"label":{"de":"导航","en":"导航","ch":"导航"},"maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"splitter":{},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/partB.md","mtime":"2020-11-27T09:33:05.955Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-27T12:06:15.676Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
